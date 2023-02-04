@@ -1,25 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import DisplayActivity from './Components/DisplayActivity';
+import Form from './Components/Form';
 
 function App() {
+
+  const [activity, setActivity] = useState("");
+
+
+  const getActivity = (numberOfKids) => {
+
+   console.log(numberOfKids)
+    const url = new URL("http://www.boredapi.com/api/activity");
+    
+    url.search = new URLSearchParams({
+      "participants": numberOfKids,
+      // "type": "educational",
+      // "price": 0,
+      // "minaccessibility": 0,
+      // "maxaccessibility": 0.4
+    })
+
+    fetch(url)
+      .then(data=>data.json())
+      .then((response) => {
+        console.log(response);
+        const activityToDisplay = response.activity;
+        console.log(activityToDisplay);
+        setActivity(activityToDisplay);
+   })
+  }
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <h1>They are bored again... </h1>
       </header>
-    </div>
-  );
+      <main>
+        <Form getActivity={getActivity}/>
+        <DisplayActivity activity={activity}/>
+      </main>
+      <footer>
+      </footer>
+    </>
+  )
 }
 
 export default App;
