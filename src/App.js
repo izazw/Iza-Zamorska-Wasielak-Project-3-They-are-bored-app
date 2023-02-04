@@ -8,14 +8,15 @@ function App() {
   const [activity, setActivity] = useState("");
 
 
-  const getActivity = (numberOfKids) => {
+  const getActivity = (numberOfKids, typeOfActivity) => {
 
    console.log(numberOfKids)
+   console.log(typeOfActivity)
     const url = new URL("https://www.boredapi.com/api/activity");
     
     url.search = new URLSearchParams({
       "participants": numberOfKids,
-      // "type": "educational",
+      "type": typeOfActivity,
       // "price": 0,
       // "minaccessibility": 0,
       // "maxaccessibility": 0.4

@@ -3,12 +3,18 @@ import { useState } from "react";
 const Form = ({getActivity}) => {
    
    const [userNumberChoice, setUserNumberChoice] = useState("1");
+   const [userActivityChoice, setUserActivityChoice] = useState("")
    const [newSearch, setNewSearch] = useState("Show me the activity");
 
    const handleChange = (event) => {
       setUserNumberChoice(event.target.value);
       setNewSearch("Show me the activity")
+      console.log(event.target.value)
    };
+
+   const handleTypeChange = (event) => {
+      setUserActivityChoice(event.target.value)
+   }
    
 
    return (
@@ -17,7 +23,7 @@ const Form = ({getActivity}) => {
          onSubmit={(event) => {
             event.preventDefault();
             setNewSearch("Give me more of that")
-            getActivity(userNumberChoice)
+            getActivity(userNumberChoice, userActivityChoice)
             }
          } 
          className="user-form" 
@@ -51,7 +57,9 @@ const Form = ({getActivity}) => {
                   type="radio" 
                   name ="type-of-activity" 
                   id="random" 
-                  value="">
+                  value=""
+                  checked={userActivityChoice === ""}
+                  onChange={handleTypeChange}>
                </input>
                
                <label htmlFor="education">Education</label>
@@ -59,7 +67,9 @@ const Form = ({getActivity}) => {
                   type="radio" 
                   name ="type-of-activity" 
                   id="education" 
-                  value="education">
+                  value="education"
+                  checked={userActivityChoice === "education"}
+                  onChange={handleTypeChange}>
                </input>
                
                <label htmlFor="recreational">Recreational</label>
@@ -67,7 +77,9 @@ const Form = ({getActivity}) => {
                   type="radio" 
                   name ="type-of-activity" 
                   id="recreational" 
-                  value="recreational">
+                  value="recreational"
+                  checked={userActivityChoice === "recreational"}
+                  onChange={handleTypeChange}>
                </input>
 
                <label htmlFor="social">Social</label>
@@ -75,7 +87,9 @@ const Form = ({getActivity}) => {
                   type="radio" 
                   name ="type-of-activity" 
                   id="social" 
-                  value="social">
+                  value="social"
+                  checked={userActivityChoice === "social"}
+                  onChange={handleTypeChange}>
                </input>
 
                <label htmlFor="diy">DIY</label>
@@ -83,7 +97,9 @@ const Form = ({getActivity}) => {
                   type="radio" 
                   name ="type-of-activity" 
                   id="diy" 
-                  value="diy">
+                  value="diy"
+                  checked={userActivityChoice === "diy"}
+                  onChange={handleTypeChange}>
                </input>
                
                <label htmlFor="cooking">Cooking</label>
@@ -91,7 +107,9 @@ const Form = ({getActivity}) => {
                   type="radio" 
                   name ="type-of-activity" 
                   id="cooking" 
-                  value="cooking">
+                  value="cooking"
+                  checked={userActivityChoice === "cooking"}
+                  onChange={handleTypeChange}>
                </input>
 
                <label htmlFor="busywork">Chores to keep them busy</label>
@@ -99,11 +117,10 @@ const Form = ({getActivity}) => {
                   type="radio" 
                   name ="type-of-activity" 
                   id="busywork" 
-                  value="busywork">
+                  value="busywork"
+                  checked={userActivityChoice === "busywork"}
+                  onChange={handleTypeChange}>
                </input>
-               
-
-
             </fieldset>
 
             <button 
@@ -114,5 +131,3 @@ const Form = ({getActivity}) => {
 }
 
 export default Form; 
-
-//check if the userChoice has changed, if it has, name = Show me the activity, if it hasn't change Show me more!
