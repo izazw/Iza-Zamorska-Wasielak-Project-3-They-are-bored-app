@@ -26,7 +26,6 @@ function App() {
       .then((response) => {
         console.log(response);
         const activityToDisplay = response.activity;
-        console.log(activityToDisplay);
         setActivity(activityToDisplay);
    })
   }
