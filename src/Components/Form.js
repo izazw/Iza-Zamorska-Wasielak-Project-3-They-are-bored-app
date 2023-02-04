@@ -9,7 +9,7 @@ const Form = ({getActivity}) => {
       setUserChoice(event.target.value);
       setNewSearch("Show me the activity")
    };
-     
+   
 
    return (
       <div>
