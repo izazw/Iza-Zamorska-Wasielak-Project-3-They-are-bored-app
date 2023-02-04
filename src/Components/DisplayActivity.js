@@ -4,7 +4,7 @@ function DisplayActivity (props) {
       <div>
          { props.activity === "" ?
 
-         <h2> We have no advice for you </h2> :
+         <h2> We have no advice for you yet</h2> :
          <p> {props.activity}</p> }
       </div>
    )

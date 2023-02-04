@@ -2,11 +2,11 @@ import { useState } from "react";
 
 const Form = ({getActivity}) => {
    
-   const [userChoice, setUserChoice] = useState("1");
+   const [userNumberChoice, setUserNumberChoice] = useState("1");
    const [newSearch, setNewSearch] = useState("Show me the activity");
 
    const handleChange = (event) => {
-      setUserChoice(event.target.value);
+      setUserNumberChoice(event.target.value);
       setNewSearch("Show me the activity")
    };
    
@@ -17,7 +17,7 @@ const Form = ({getActivity}) => {
          onSubmit={(event) => {
             event.preventDefault();
             setNewSearch("Give me more of that")
-            getActivity(userChoice)
+            getActivity(userNumberChoice)
             }
          } 
          className="user-form" 
@@ -31,7 +31,7 @@ const Form = ({getActivity}) => {
                   name ="number-of-kids" 
                   id="one-kid" 
                   value="1" 
-                  checked={userChoice === '1'}
+                  checked={userNumberChoice === '1'}
                   onChange={handleChange}></input>
                
                <label htmlFor="two-kids">2 or more</label>
@@ -40,12 +40,74 @@ const Form = ({getActivity}) => {
                   name ="number-of-kids" 
                   id="two-kids" 
                   value="2"
-                  checked={userChoice === '2'}
+                  checked={userNumberChoice === '2'}
                   onChange={handleChange}></input>
-
-               <button 
-               type="submit"> {newSearch} </button>
             </fieldset>
+            <fieldset>
+               <legend>What kind of activity do you think of?</legend>
+
+               <label htmlFor="random">Doesn't matter to me</label>
+               <input 
+                  type="radio" 
+                  name ="type-of-activity" 
+                  id="random" 
+                  value="">
+               </input>
+               
+               <label htmlFor="education">Education</label>
+               <input 
+                  type="radio" 
+                  name ="type-of-activity" 
+                  id="education" 
+                  value="education">
+               </input>
+               
+               <label htmlFor="recreational">Recreational</label>
+               <input 
+                  type="radio" 
+                  name ="type-of-activity" 
+                  id="recreational" 
+                  value="recreational">
+               </input>
+
+               <label htmlFor="social">Social</label>
+               <input 
+                  type="radio" 
+                  name ="type-of-activity" 
+                  id="social" 
+                  value="social">
+               </input>
+
+               <label htmlFor="diy">DIY</label>
+               <input 
+                  type="radio" 
+                  name ="type-of-activity" 
+                  id="diy" 
+                  value="diy">
+               </input>
+               
+               <label htmlFor="cooking">Cooking</label>
+               <input 
+                  type="radio" 
+                  name ="type-of-activity" 
+                  id="cooking" 
+                  value="cooking">
+               </input>
+
+               <label htmlFor="busywork">Chores to keep them busy</label>
+               <input 
+                  type="radio" 
+                  name ="type-of-activity" 
+                  id="busywork" 
+                  value="busywork">
+               </input>
+               
+
+
+            </fieldset>
+
+            <button 
+               type="submit"> {newSearch} </button>
          </form>
       </div>
    )
