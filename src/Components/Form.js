@@ -1,20 +1,25 @@
 import { useState } from "react";
 
 const Form = ({getActivity}) => {
-   const [userChoice, setUserChoice] = useState("");
+   
+   const [userChoice, setUserChoice] = useState("1");
+   const [newSearch, setNewSearch] = useState("Show me the activity");
 
    const handleChange = (event) => {
-      setUserChoice(event.target.value)
+      setUserChoice(event.target.value);
+      setNewSearch("Show me the activity")
    };
-     
+   
 
    return (
       <div>
          <form 
          onSubmit={(event) => {
             event.preventDefault();
+            setNewSearch("Give me more of that")
             getActivity(userChoice)
-         }} 
+            }
+         } 
          className="user-form" 
          name="user-selection">
             <fieldset>
@@ -26,6 +31,7 @@ const Form = ({getActivity}) => {
                   name ="number-of-kids" 
                   id="one-kid" 
                   value="1" 
+                  checked={userChoice === '1'}
                   onChange={handleChange}></input>
                
                <label htmlFor="two-kids">2 or more</label>
@@ -34,25 +40,11 @@ const Form = ({getActivity}) => {
                   name ="number-of-kids" 
                   id="two-kids" 
                   value="2"
+                  checked={userChoice === '2'}
                   onChange={handleChange}></input>
-               
-               {/* <label htmlFor="three-kids">3</label>
-               <input 
-                  type="radio" 
-                  name ="number-of-kids" 
-                  id="three-kids" 
-                  value="3"
-                  onChange={handleChange}></input>
-               
-               <label htmlFor="four-kids">4</label>
-               <input 
-                  type="radio" 
-                  name ="number-of-kids" 
-                  id="four-kids" 
-                  value="4"
-                  onChange={handleChange}>
-               </input> */}
-               <button type="submit"> Submit!</button>
+
+               <button 
+               type="submit"> {newSearch} </button>
             </fieldset>
          </form>
       </div>
@@ -60,3 +52,5 @@ const Form = ({getActivity}) => {
 }
 
 export default Form; 
+
+//check if the userChoice has changed, if it has, name = Show me the activity, if it hasn't change Show me more!
