@@ -14,7 +14,7 @@ function DisplayActivity (props) {
       )
    else 
          return (
-         <p>We have no advice for you</p>);
+         <p>We have no advice for you, change criteria</p>);
 }
 
 export default DisplayActivity;
