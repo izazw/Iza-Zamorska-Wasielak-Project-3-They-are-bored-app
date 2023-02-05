@@ -17,10 +17,10 @@ function App() {
     url.search = new URLSearchParams({
       "participants": numberOfKids,
       "type": typeOfActivity,
-      // "price": 0,
-      // "minaccessibility": 0,
-      // "maxaccessibility": 0.4
-      // "link": ""
+      "minprice" : 0, 
+      "maxprice" : 0.5,
+      "minaccessibility": 0,
+      "maxaccessibility": 0.4
     })
 
     fetch(url)
