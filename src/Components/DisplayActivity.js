@@ -1,13 +1,20 @@
 function DisplayActivity (props) {
+   if (props.activity !== undefined)
 
-   return (
-      <div>
-         { props.activity === "" ?
+      return (
+         <div>
+            { props.activity !== "" ?
+            <p> {props.activity}  </p> :
+            <p> We have no advice for you yet</p> }
 
-         <h2> We have no advice for you yet</h2> :
-         <p> {props.activity}</p> }
-      </div>
-   )
+            { props.activity !== "" && props.link !== "" &&
+            <p> You can find additional details here: <a href= {props.link}> {props.link} </a></p> }
+
+         </div>
+      )
+   else 
+         return (
+         <p>We have no advice for you</p>);
 }
 
 export default DisplayActivity;
