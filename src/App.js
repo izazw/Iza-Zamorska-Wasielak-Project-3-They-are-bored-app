@@ -6,19 +6,21 @@ import Form from './Components/Form';
 function App() {
 
   const [activity, setActivity] = useState("");
+  const [activityLink, setActivityLink] = useState("");
 
+  const getActivity = (numberOfKids, typeOfActivity) => {
 
-  const getActivity = (numberOfKids) => {
-
-   console.log(numberOfKids)
+  console.log(numberOfKids)
+  console.log(typeOfActivity)
     const url = new URL("https://www.boredapi.com/api/activity");
     
     url.search = new URLSearchParams({
       "participants": numberOfKids,
-      // "type": "educational",
+      "type": typeOfActivity,
       // "price": 0,
       // "minaccessibility": 0,
       // "maxaccessibility": 0.4
+      // "link": ""
     })
 
     fetch(url)
@@ -26,7 +28,10 @@ function App() {
       .then((response) => {
         console.log(response);
         const activityToDisplay = response.activity;
+        const activityLink = response.link;
+        console.log(activityLink)
         setActivity(activityToDisplay);
+        setActivityLink(activityLink);
    })
   }
   
@@ -38,7 +43,7 @@ function App() {
       </header>
       <main>
         <Form getActivity={getActivity}/>
-        <DisplayActivity activity={activity}/>
+        <DisplayActivity activity={activity} link={activityLink} />
       </main>
       <footer>
       </footer>

@@ -2,13 +2,19 @@ import { useState } from "react";
 
 const Form = ({getActivity}) => {
    
-   const [userChoice, setUserChoice] = useState("1");
+   const [userNumberChoice, setUserNumberChoice] = useState("1");
+   const [userActivityChoice, setUserActivityChoice] = useState("")
    const [newSearch, setNewSearch] = useState("Show me the activity");
 
    const handleChange = (event) => {
-      setUserChoice(event.target.value);
+      setUserNumberChoice(event.target.value);
       setNewSearch("Show me the activity")
+      console.log(event.target.value)
    };
+
+   const handleTypeChange = (event) => {
+      setUserActivityChoice(event.target.value)
+   }
    
 
    return (
@@ -17,7 +23,7 @@ const Form = ({getActivity}) => {
          onSubmit={(event) => {
             event.preventDefault();
             setNewSearch("Give me more of that")
-            getActivity(userChoice)
+            getActivity(userNumberChoice, userActivityChoice)
             }
          } 
          className="user-form" 
@@ -31,7 +37,7 @@ const Form = ({getActivity}) => {
                   name ="number-of-kids" 
                   id="one-kid" 
                   value="1" 
-                  checked={userChoice === '1'}
+                  checked={userNumberChoice === '1'}
                   onChange={handleChange}></input>
                
                <label htmlFor="two-kids">2 or more</label>
@@ -40,17 +46,88 @@ const Form = ({getActivity}) => {
                   name ="number-of-kids" 
                   id="two-kids" 
                   value="2"
-                  checked={userChoice === '2'}
+                  checked={userNumberChoice === '2'}
                   onChange={handleChange}></input>
-
-               <button 
-               type="submit"> {newSearch} </button>
             </fieldset>
+            <fieldset>
+               <legend>What kind of activity do you think of?</legend>
+
+               <label htmlFor="random">Doesn't matter to me</label>
+               <input 
+                  type="radio" 
+                  name ="type-of-activity" 
+                  id="random" 
+                  value=""
+                  checked={userActivityChoice === ""}
+                  onChange={handleTypeChange}>
+               </input>
+               
+               <label htmlFor="education">Education</label>
+               <input 
+                  type="radio" 
+                  name ="type-of-activity" 
+                  id="education" 
+                  value="education"
+                  checked={userActivityChoice === "education"}
+                  onChange={handleTypeChange}>
+               </input>
+               
+               <label htmlFor="recreational">Recreational</label>
+               <input 
+                  type="radio" 
+                  name ="type-of-activity" 
+                  id="recreational" 
+                  value="recreational"
+                  checked={userActivityChoice === "recreational"}
+                  onChange={handleTypeChange}>
+               </input>
+
+               <label htmlFor="social">Social</label>
+               <input 
+                  type="radio" 
+                  name ="type-of-activity" 
+                  id="social" 
+                  value="social"
+                  checked={userActivityChoice === "social"}
+                  onChange={handleTypeChange}>
+               </input>
+
+               <label htmlFor="diy">DIY</label>
+               <input 
+                  type="radio" 
+                  name ="type-of-activity" 
+                  id="diy" 
+                  value="diy"
+                  checked={userActivityChoice === "diy"}
+                  onChange={handleTypeChange}>
+               </input>
+               
+               <label htmlFor="cooking">Cooking</label>
+               <input 
+                  type="radio" 
+                  name ="type-of-activity" 
+                  id="cooking" 
+                  value="cooking"
+                  checked={userActivityChoice === "cooking"}
+                  onChange={handleTypeChange}>
+               </input>
+
+               <label htmlFor="busywork">Chores to keep them busy</label>
+               <input 
+                  type="radio" 
+                  name ="type-of-activity" 
+                  id="busywork" 
+                  value="busywork"
+                  checked={userActivityChoice === "busywork"}
+                  onChange={handleTypeChange}>
+               </input>
+            </fieldset>
+
+            <button 
+               type="submit"> {newSearch} </button>
          </form>
       </div>
    )
 }
 
 export default Form; 
-
-//check if the userChoice has changed, if it has, name = Show me the activity, if it hasn't change Show me more!
