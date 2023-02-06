@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 const Form = ({getActivity}) => {
@@ -31,99 +32,108 @@ const Form = ({getActivity}) => {
             <fieldset>
                <legend>How many kids are feeling bored?</legend>
                
-               <label htmlFor="one-kid">1</label>
-               <input 
-                  type="radio" 
-                  name ="number-of-kids" 
-                  id="one-kid" 
-                  value="1" 
-                  checked={userNumberChoice === '1'}
-                  onChange={handleChange}></input>
-               
-               <label htmlFor="two-kids">2 or more</label>
-               <input 
-                  type="radio" 
-                  name ="number-of-kids" 
-                  id="two-kids" 
-                  value="2"
-                  checked={userNumberChoice === '2'}
-                  onChange={handleChange}></input>
+               <div>
+                  <input 
+                     type="radio" 
+                     name ="number-of-kids" 
+                     id="one-kid" 
+                     value="1" 
+                     checked={userNumberChoice === '1'}
+                     onChange={handleChange}></input>
+                  <label htmlFor="one-kid">1</label>
+               </div>
+               <div>
+                  <input 
+                     type="radio" 
+                     name ="number-of-kids" 
+                     id="two-kids" 
+                     value="2"
+                     checked={userNumberChoice === '2'}
+                     onChange={handleChange}></input>
+                  <label htmlFor="two-kids">2 or more</label>
+               </div>
             </fieldset>
             <fieldset>
                <legend>What kind of activity do you think of?</legend>
-
-               <label htmlFor="random">Doesn't matter to me</label>
-               <input 
-                  type="radio" 
-                  name ="type-of-activity" 
-                  id="random" 
-                  value=""
-                  checked={userActivityChoice === ""}
-                  onChange={handleTypeChange}>
-               </input>
-               
-               <label htmlFor="education">Education</label>
-               <input 
-                  type="radio" 
-                  name ="type-of-activity" 
-                  id="education" 
-                  value="education"
-                  checked={userActivityChoice === "education"}
-                  onChange={handleTypeChange}>
-               </input>
-               
-               <label htmlFor="recreational">Recreational</label>
-               <input 
-                  type="radio" 
-                  name ="type-of-activity" 
-                  id="recreational" 
-                  value="recreational"
-                  checked={userActivityChoice === "recreational"}
-                  onChange={handleTypeChange}>
-               </input>
-
-               <label htmlFor="social">Social</label>
-               <input 
-                  type="radio" 
-                  name ="type-of-activity" 
-                  id="social" 
-                  value="social"
-                  checked={userActivityChoice === "social"}
-                  onChange={handleTypeChange}>
-               </input>
-
-               <label htmlFor="diy">DIY</label>
-               <input 
-                  type="radio" 
-                  name ="type-of-activity" 
-                  id="diy" 
-                  value="diy"
-                  checked={userActivityChoice === "diy"}
-                  onChange={handleTypeChange}>
-               </input>
-               
-               <label htmlFor="cooking">Cooking</label>
-               <input 
-                  type="radio" 
-                  name ="type-of-activity" 
-                  id="cooking" 
-                  value="cooking"
-                  checked={userActivityChoice === "cooking"}
-                  onChange={handleTypeChange}>
-               </input>
-
-               <label htmlFor="busywork">Chores to keep them busy</label>
-               <input 
-                  type="radio" 
-                  name ="type-of-activity" 
-                  id="busywork" 
-                  value="busywork"
-                  checked={userActivityChoice === "busywork"}
-                  onChange={handleTypeChange}>
-               </input>
+               <div>
+                  <input 
+                     type="radio" 
+                     name ="type-of-activity" 
+                     id="random" 
+                     value=""
+                     checked={userActivityChoice === ""}
+                     onChange={handleTypeChange}>
+                  </input>
+                  <label htmlFor="random">Doesn't matter to me</label>
+               </div>
+               <div>
+                  <input 
+                     type="radio" 
+                     name ="type-of-activity" 
+                     id="education" 
+                     value="education"
+                     checked={userActivityChoice === "education"}
+                     onChange={handleTypeChange}>
+                  </input>
+                  <label htmlFor="education">Education</label>
+               </div>
+               <div>
+                  <input 
+                     type="radio" 
+                     name ="type-of-activity" 
+                     id="recreational" 
+                     value="recreational"
+                     checked={userActivityChoice === "recreational"}
+                     onChange={handleTypeChange}>
+                  </input>
+                  <label htmlFor="recreational">Recreational</label>
+               </div>
+               <div>
+                  <input 
+                     type="radio" 
+                     name ="type-of-activity" 
+                     id="social" 
+                     value="social"
+                     checked={userActivityChoice === "social"}
+                     onChange={handleTypeChange}>
+                  </input>
+                  <label htmlFor="social">Social</label>
+               </div>
+               <div>
+                  <input 
+                     type="radio" 
+                     name ="type-of-activity" 
+                     id="diy" 
+                     value="diy"
+                     checked={userActivityChoice === "diy"}
+                     onChange={handleTypeChange}>
+                  </input>
+                  <label htmlFor="diy">DIY</label>
+               </div>
+               <div>
+                  <input 
+                     type="radio" 
+                     name ="type-of-activity" 
+                     id="cooking" 
+                     value="cooking"
+                     checked={userActivityChoice === "cooking"}
+                     onChange={handleTypeChange}>
+                  </input>
+                  <label htmlFor="cooking">Cooking</label>
+               </div>
+               <div>
+                  <input 
+                     type="radio" 
+                     name ="type-of-activity" 
+                     id="busywork" 
+                     value="busywork"
+                     checked={userActivityChoice === "busywork"}
+                     onChange={handleTypeChange}>
+                  </input>
+                  <label htmlFor="busywork">Chores to keep them busy</label>
+               </div>
             </fieldset>
-
-            <button 
+            <button
                type="submit"> {newSearch} </button>
          </form>
       </div>
