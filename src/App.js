@@ -39,13 +39,22 @@ function App() {
   return (
     <>
       <header>
-        <h1>They are bored again... </h1>
+        <div className="wrapper">
+          <h1>They are bored again... </h1>
+          <p className="introduction"> After hearing "I'm bored" for the 1000th time, no matter if it's your kiddo, nephew, niece, or any other dependent, you might want to get some help to find out what to propose. Would you like a hint?
+   </p>
+        </div>
       </header>
       <main>
-        <Form getActivity={getActivity}/>
-        <DisplayActivity activity={activity} link={activityLink} />
+        <div className="wrapper">
+          <Form getActivity={getActivity}/>
+          <DisplayActivity activity={activity} link={activityLink} />
+        </div>
       </main>
       <footer>
+        <div className="wrapper">
+
+        </div>
       </footer>
     </>
   )

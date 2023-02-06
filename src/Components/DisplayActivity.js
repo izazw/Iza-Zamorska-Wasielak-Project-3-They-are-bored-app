@@ -1,3 +1,4 @@
+
 function DisplayActivity (props) {
    if (props.activity !== undefined)
 
