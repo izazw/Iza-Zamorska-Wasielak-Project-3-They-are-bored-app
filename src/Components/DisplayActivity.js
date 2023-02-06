@@ -16,7 +16,7 @@ function DisplayActivity (props) {
    else 
          return (
             <div className="activity">
-               <p>We have no advice for you, change criteria</p>;
+               <p>We have no advice for you, change criteria</p>
             </div>
          )
          
