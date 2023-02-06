@@ -142,11 +142,11 @@ a:visited, a:link {
 }   
 
 
-footer {
-  position: absolute;
+/* footer {
+  position: fixed;
   bottom: 0;
   width: 100%;
   margin-bottom: 2px;
   font-size: 0.8rem;
-}
+} */
 /* media queries */
