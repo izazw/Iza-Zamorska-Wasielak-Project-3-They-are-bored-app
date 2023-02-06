@@ -53,7 +53,7 @@ function App() {
       </main>
       <footer>
         <div className="wrapper">
-          <p>Created at <a href="https://junocollege.com/">Juno College of Technology</a> by <a href="https://izacodes.me/">Iza Zamorska-Wasielak</a></p>
+          {/* <p>Created at <a href="https://junocollege.com/">Juno College of Technology</a> by <a href="https://izacodes.me/">Iza Zamorska-Wasielak</a></p> */}
         </div>
       </footer>
     </>

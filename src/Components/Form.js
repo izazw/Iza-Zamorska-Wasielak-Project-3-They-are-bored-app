@@ -133,8 +133,7 @@ const Form = ({getActivity}) => {
                   <label htmlFor="busywork">Chores to keep them busy</label>
                </div>
             </fieldset>
-            <button
-               type="submit"> {newSearch} </button>
+            <button> {newSearch} </button>
          </form>
       </div>
    )
