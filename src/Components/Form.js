@@ -16,6 +16,7 @@ const Form = ({getActivity}) => {
    const handleTypeChange = (event) => {
       setUserActivityChoice(event.target.value)
    }
+
    
 
    return (
@@ -50,11 +51,11 @@ const Form = ({getActivity}) => {
                      value="2"
                      checked={userNumberChoice === '2'}
                      onChange={handleChange}></input>
-                  <label htmlFor="two-kids">2 or more</label>
+                  <label htmlFor="two-kids">2+</label>
                </div>
             </fieldset>
             <fieldset>
-               <legend>What kind of activity do you think of?</legend>
+               <legend>What kind of activity do you have in mind?</legend>
                <div>
                   <input 
                      type="radio" 
