@@ -38,7 +38,7 @@ body {
   accent-color: #5db369;    
 }
 
-h1, h2, h3, h4 {
+h1, h2 {
   font-family: 'Paytone One', sans-serif;
 }
 
@@ -110,20 +110,17 @@ button {
 }
 
 
-button:focus {
-background-color: #99ff99;
-/* transition: 0.2s ease-out; */
-}
-
+button:focus-visible, 
 button:hover {
-background-color: #99ff99;
-/* transition: 0.2s ease-out; */
+  background-color: #99ff99;
+  transition: 0.3s ease-out;
+  border: none;
 }
 
 .activity {
   font-weight: bold;
   background: rgb(221,118,117);
-background: linear-gradient(90deg, rgba(221,118,117,1) 0%, rgba(255,225,225,1) 95%);
+  background: linear-gradient(90deg, rgba(221,118,117,1) 0%, rgba(255,225,225,1) 95%);
   padding: 20px;
   border-radius: 5px;
 }
@@ -142,11 +139,79 @@ a:visited, a:link {
 }   
 
 
-/* footer {
-  position: fixed;
-  bottom: 0;
+footer {
   width: 100%;
-  margin-bottom: 2px;
+  margin: 0 auto;
   font-size: 0.8rem;
-} */
+  height: 5%;
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+}
+
+footer .wrapper {
+  margin-top: 30px;
+}
+
+footer p {
+  margin-bottom: 1px;
+  font-size: 0.8rem;
+}
+
+
+
 /* media queries */
+
+@media (max-width: 700px) {
+  legend {
+    padding: 5px;
+    margin-right: 0;
+  }
+}
+
+
+@media(max-width: 500px) {
+  .wrapper {
+  width: 90%;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+
+ 
+   .introduction, legend, input, label {
+    font-size: 0.9rem;
+   }
+
+   .side-note {
+    font-size: 0.8rem;
+   }
+
+   legend {
+    padding: 2px;
+   }
+
+   fieldset {
+    border: solid #dd7675 3px;
+    line-height: 1.2rem;
+   }
+
+   .activity {
+    padding: 5px;
+    margin-bottom: 20px;
+   }
+}
+
+@media (max-width: 400px) {
+  footer .wrapper {
+    position: initial;
+    transform: none;
+    display: flex;
+    margin-top: 30px;
+  }
+
+  footer .wrapper p {
+    align-self: flex-end;
+  }
+}
