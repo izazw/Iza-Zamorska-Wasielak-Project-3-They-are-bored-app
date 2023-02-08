@@ -37,7 +37,7 @@ function App() {
   
 
   return (
-    <>
+    <div class="all">
       <header>
         <div className="wrapper">
           <h1>They are bored again... </h1>
@@ -56,7 +56,7 @@ function App() {
           <p>Created at <a href="https://junocollege.com/">Juno College of Technology</a> by <a href="https://izacodes.me/">Iza Zamorska-Wasielak</a></p>
         </div>
       </footer>
-    </>
+    </div>
   )
 }
 
