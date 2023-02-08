@@ -147,7 +147,10 @@ a {
 }
 
 a:visited, 
-a:link {
+a:link,
+a:hover,
+a:focus
+ {
   color: rgb(83, 74, 74);
 }   
 
