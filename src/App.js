@@ -24,7 +24,9 @@ function App() {
     })
 
     fetch(url)
-      .then(data=>data.json())
+      .then(data=> 
+        {console.log(data)
+         return data.json()})
       .then((response) => {
         console.log(response);
         const activityToDisplay = response.activity;
