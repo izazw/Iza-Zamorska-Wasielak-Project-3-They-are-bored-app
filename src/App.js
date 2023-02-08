@@ -2,17 +2,19 @@ import './App.css';
 import { useState } from 'react';
 import DisplayActivity from './Components/DisplayActivity';
 import Form from './Components/Form';
+import Error from './Components/Error';
 
 function App() {
 
   const [activity, setActivity] = useState("");
   const [activityLink, setActivityLink] = useState("");
+  const [formError, setFormError] = useState(false);
 
   const getActivity = (numberOfKids, typeOfActivity) => {
 
   console.log(numberOfKids)
   console.log(typeOfActivity)
-    const url = new URL("https://www.boredapi.com/api/activity");
+    const url = new URL("https://trawww.boredapi.com/api/activity");
     
     url.search = new URLSearchParams({
       "participants": numberOfKids,
@@ -34,7 +36,9 @@ function App() {
         console.log(activityLink)
         setActivity(activityToDisplay);
         setActivityLink(activityLink);
+        setFormError(false);
    })
+   .catch((error) => setFormError(true));
   }
   
 
@@ -50,6 +54,7 @@ function App() {
       <main>
         <div className="wrapper">
           <Form getActivity={getActivity}/>
+          <Error error = {formError}/>
           <DisplayActivity activity={activity} link={activityLink} />
         </div>
       </main>
