@@ -74,9 +74,6 @@ h1 {
   line-height: 2.5rem;
 }
 
-.introduction {
-  font-size: 1rem;
-}
 
 form {
   font-family: 'Hind Siliguri', sans-serif;
@@ -127,6 +124,7 @@ button:hover {
   background-color: #99ff99;
   transition: 0.3s ease-out;
   border: none;
+  color: black;
 }
 
 .activity {
@@ -195,5 +193,9 @@ footer p {
    .activity {
     padding: 5px;
     margin-bottom: 20px;
+   }
+
+   .activity-link {
+    font-size: 0.8rem;
    }
 }
