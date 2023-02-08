@@ -194,4 +194,8 @@ footer p {
     padding: 5px;
     margin-bottom: 20px;
    }
+
+   .activity-link {
+    font-size: 0.8rem;
+   }
 }
