@@ -14,7 +14,7 @@ function App() {
 
   console.log(numberOfKids)
   console.log(typeOfActivity)
-    const url = new URL("https://trawww.boredapi.com/api/activity");
+    const url = new URL("https://www.boredapi.com/api/activity");
     
     url.search = new URLSearchParams({
       "participants": numberOfKids,
