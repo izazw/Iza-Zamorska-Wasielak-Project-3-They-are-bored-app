@@ -9,7 +9,7 @@ function DisplayActivity (props) {
             <p> We have no advice for you yet</p> }
 
             { props.activity !== "" && props.link !== "" &&
-            <p> You can find additional details here: <a class="activity-link" href= {props.link}> {props.link} </a></p> }
+            <p> You can find additional details <a class="activity-link" href= {props.link}>HERE</a>.</p> }
 
          </div>
       )
