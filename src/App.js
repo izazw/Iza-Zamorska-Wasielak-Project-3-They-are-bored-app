@@ -1,19 +1,25 @@
 import './App.css';
 import { useState } from 'react';
+
+// components
+
 import DisplayActivity from './Components/DisplayActivity';
 import Form from './Components/Form';
 import Error from './Components/Error';
 
+
 function App() {
 
+  //states for the activity to display 
   const [activity, setActivity] = useState("");
   const [activityLink, setActivityLink] = useState("");
+
+  // catching errors from API
   const [formError, setFormError] = useState(false);
+
 
   const getActivity = (numberOfKids, typeOfActivity) => {
 
-  console.log(numberOfKids)
-  console.log(typeOfActivity)
     const url = new URL("https://www.boredapi.com/api/activity");
     
     url.search = new URLSearchParams({
@@ -26,24 +32,23 @@ function App() {
     })
 
     fetch(url)
-      .then(data=> 
-        {console.log(data)
-         return data.json()})
+      .then(data=> data.json())
       .then((response) => {
-        console.log(response);
         const activityToDisplay = response.activity;
         const activityLink = response.link;
-        console.log(activityLink)
         setActivity(activityToDisplay);
         setActivityLink(activityLink);
         setFormError(false);
    })
-   .catch((error) => setFormError(true));
+  //  error handling 
+   .catch((error) => {
+    setFormError(true);
+  }
+    );
   }
   
-
   return (
-    <div class="all">
+    <div className="all">
       <header>
         <div className="wrapper">
           <h1>They are bored again... </h1>
@@ -54,7 +59,7 @@ function App() {
       <main>
         <div className="wrapper">
           <Form getActivity={getActivity}/>
-          <Error error = {formError}/>
+          <Error error={formError}/>
           <DisplayActivity activity={activity} link={activityLink} />
         </div>
       </main>
