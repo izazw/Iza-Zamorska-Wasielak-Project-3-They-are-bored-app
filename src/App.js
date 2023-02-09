@@ -51,7 +51,7 @@ function App() {
     <div className="all">
       <header>
         <div className="wrapper">
-          <h1>They are bored again... </h1>
+          <h1>They are bored <span>again</span>... </h1>
           <p className="introduction"> No matter if it's your kiddo, nephew, niece, or any other young one, you might want help finding an activity to keep them busy. </p>
           <p className="side-note">Please note that you are responsible for assessing if the activity is age appropriate.</p>
         </div>
