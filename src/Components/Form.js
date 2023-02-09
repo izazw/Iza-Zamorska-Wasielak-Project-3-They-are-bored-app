@@ -13,7 +13,8 @@ const Form = ({getActivity}) => {
    };
 
    const handleTypeChange = (event) => {
-      setUserActivityChoice(event.target.value)
+      setUserActivityChoice(event.target.value);
+      setNewSearch("Show me the activity");
    }
 
    
