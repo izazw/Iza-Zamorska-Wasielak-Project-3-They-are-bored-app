@@ -10,7 +10,6 @@ const Form = ({getActivity}) => {
    const handleChange = (event) => {
       setUserNumberChoice(event.target.value);
       setNewSearch("Show me the activity")
-      console.log(event.target.value)
    };
 
    const handleTypeChange = (event) => {
